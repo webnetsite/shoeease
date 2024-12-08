@@ -1,0 +1,498 @@
+/* General Reset */
+body, h1, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  background-color:#344443 /* Light background for the main section */
+}
+/* Navbar Links Hover Effect */
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover {
+  color: #ffa500; /* Change text color on hover */
+  border-bottom: 2px solid #ffa500; /* Optional: Add an underline effect */
+}
+
+/* Hover Effect for Navbar Background (Optional) */
+.navbar:hover {
+  transition: background-color 0.3s ease-in-out;
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+  color:#f5dba4;
+  position: fixed; /* Makes the navbar stay at the top */
+  top: 0; /* Aligns the navbar to the top of the viewport */
+  left: 0; /* Ensures the navbar starts at the left edge */
+  width: 100%; /* Makes the navbar take full width */
+  z-index: 1000; /* Ensures the navbar stays on top of other content */
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* Aligns the image and text vertically */
+  gap: 10px; /* Adds space between the logo image and text */
+}
+
+.logo-img {
+  width: 50px; /* Adjust the size of the logo image */
+  height: 50px; /* Adjust the size of the logo image */
+  border-radius: 50%; /* Optional: Makes the logo image round */
+}
+
+.logo-text {
+  font-size: 25px;
+  font-weight: bold;
+}
+body {
+  margin-top: 80px; /* Gives space for the fixed navbar */
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar .logo img {
+  max-height: 50px; /* Set a maximum height for the logo */
+  width: 50px; /* Set a fixed width for the logo */
+  height: 50px; /* Set a fixed height for the logo */
+  border-radius: 50%; /* Makes the logo round */
+  object-fit: cover; /* Ensures the image covers the area without distorting */
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 60px;
+  width: 33%;
+  padding: 20px;
+  background-color: #333;
+  font-size: 18px;
+}
+.navbar .hamburger:hover + .nav-links {
+  display: flex; /* Make nav links appear on hover */
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  padding-right: 30px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  background-color: #344443;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Product Grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.product {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures equal spacing between items */
+  height: 450px; /* Fixed height for uniformity */
+}
+
+.product img {
+  width: 100%;
+  height: 300px; /* Fixed height for all product images */
+  object-fit: cover; /* Ensures images cover the space without distortion */
+  border-radius: 8px;
+}
+
+.product h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.product p {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #555;
+}
+/* Carousel Styling */
+.carousel-container {
+  top: 30px;
+  position: relative;
+  max-width: 1000px;
+  margin: 2rem auto;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 500px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 50%; /* 3 slides in total, so width is 300% */
+}
+
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.control-btn {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.control-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    gap: 0.5rem;
+    padding-right: 50px;
+  } 
+
+  
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .nav-links {
+    font-size: 18px;
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    width: 30%;
+    top: 102%;
+    right: 36px;
+    padding: 10px;
+    background-color: #333; /* Match navbar background */
+    position: absolute; /* Ensure it overlays the content */
+    
+  }
+  .navbar .nav-links.active {
+    display: flex; /* Show when active */
+  }
+  @media (min-width: 1024px) {
+    .nav-links {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  
+    .about h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show the hamburger icon */
+    
+  }
+}
+@media (min-width: 1024px) {
+  .about {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about h1 {
+    font-size: 2.5rem;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1.25rem;
+  }
+}
+
+
+
+/* About Section */
+.about {
+  text-align: center;
+}
+
+.about h1 {
+  padding: 40px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #f5dba4;
+  font-family:sans-serif;
+}
+
+.about p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #f5dba4;
+  font-family:sans-serif;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #f5dba4;
+  font-family:sans-serif;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  color: #f5dba4;
+  font-family:sans-serif;
+}
+
+.about li {
+  font-size: 1.125rem;
+  margin-bottom: 0.75rem;
+}
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem;
+  text-align: left;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px; /* Ensures sections don't shrink too much on small screens */
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #f5dba4;
+}
+
+.footer-section p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: left;
+}
+
+.social-icon {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  background-color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #f5dba4;
+}
+
+.footer-note {
+  margin-top: 2rem;
+  font-size: 0.875rem;
+  color: #bbb;
+  text-align: center;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icon {
+    font-size: 0.875rem;
+  }
+}
+/* Contact Page */
+.contact-page {
+  padding: 2rem;
+  background-color: #344443;
+  color: #f5dba4;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contact-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #344443;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-family:sans-serif;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  flex-direction: column;
+  font-family:sans-serif;
+
+}
+
+.contact-info li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem; 
+}
+
+.contact-form-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #486866;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family:sans-serif;
+}
+
+.contact-form-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-form .submit-btn {
+  background-color: #344443;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: center;
+}
+
+.contact-form .submit-btn:hover {
+  background-color: #555;
+}
+
